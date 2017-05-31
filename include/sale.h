@@ -10,9 +10,10 @@ private:
     time_t _sale_time;
     Sale(long double, time_t);
 public:
+    Sale();
     Sale(long double);
     long double cost();
-    time_t sale_time();
+    time_t& sale_time();
 
     friend std::ostream& operator<<(std::ostream&, Sale&);
     friend std::istream& operator>>(std::istream&, Sale&);

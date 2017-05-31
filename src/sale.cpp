@@ -4,7 +4,12 @@
 
 using namespace std;
 
+Sale::Sale() {
+    _sale_time = time(nullptr);
+}
+
 Sale::Sale(long double cost) {
+    _sale_time = time(nullptr);
     _cost = cost;
 }
 
@@ -19,7 +24,7 @@ long double Sale::cost() {
 }
 
 
-time_t Sale::sale_time() {
+time_t& Sale::sale_time() {
     return _sale_time;
 }
 

@@ -35,8 +35,6 @@ void Manager::save_store_file() {
     file.close();
 }
 
-bool menu_products_print(vector<Product>&);
-
 bool Manager::menu_store_print() {
     cout << tab << tab << "TFC > Fabrica y venta de ropa" << endl << endl
         << tab << "1. Manejar productos." << endl
@@ -53,7 +51,12 @@ bool Manager::menu_store_print() {
                 res = menu_products_print();
             } while(res);
         } break;
-        case 2: break;
+        case 2: {
+            bool res;
+            do {
+                res = menu_sales_print();
+            } while(res);
+        } break;
     }
 
     return option != 3;
@@ -116,4 +119,51 @@ Product products_add() {
     cout << endl;
 
     return product;
+}
+
+bool sales_list(vector<Sale>&);
+Sale sales_add();
+
+bool Manager::menu_sales_print() {
+    cout << tab << tab << "TFC > Fabrica... > Ventas" << endl << endl
+        << tab << "1. Listar ventas." << endl
+        << tab << "2. Agregar ventas." << endl
+        << tab << "3. Regresar" << endl;
+
+    int option = menu_read(1, 3);
+    cout << endl << endl;
+
+    switch(option) {
+        case 1: sales_list(store.sales()); break;
+        case 2: store.sales().push_back(sales_add()); break;
+    }
+
+    return option != 3;
+}
+
+bool sales_list(vector<Sale>& sales) {
+    cout << tab << "Numero de ventas: " << sales.size() << endl
+        << endl;
+
+    for(auto& sale : sales) {
+        time_t sale_time = sale.sale_time();
+        tm current = *localtime(&sale_time);
+        cout << tab << put_time(&current, "%c")
+            << " - $" << setw(10) << put_money(sale.cost()) << endl;
+    }
+
+    cout << endl;
+
+    return false;
+}
+
+Sale sales_add() {
+    long double cost;
+
+    cout << tab << "Costo: ";
+    cin >> cost;
+
+    cout << endl;
+
+    return Sale(cost);
 }

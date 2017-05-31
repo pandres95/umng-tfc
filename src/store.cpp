@@ -24,6 +24,13 @@ std::ostream& operator<<(std::ostream& os, Store& store) {
     for(auto& product : store.products()) {
         os << product;
     }
+
+    os << store.sales().size() << endl;
+
+    for(auto& sale : store.sales()) {
+        os << sale;
+    }
+
     return os;
 }
 
@@ -40,14 +47,14 @@ std::istream& operator>>(std::istream& is, Store& store) {
         store.products().push_back(product);
     }
 
-    /*is >> n;
+    is >> n;
     getline(is, c);
 
     for(int i = 0; i < n; i++){
         Sale sale;
         is >> sale;
         store.sales().push_back(sale);
-    }*/
+    }
 
     return is;
 }
