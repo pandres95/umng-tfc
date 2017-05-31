@@ -3,6 +3,7 @@
 
 #include "tab.h"
 #include "zoo.h"
+#include "store.h"
 #include <vector>
 
 class Manager {
@@ -26,7 +27,13 @@ class Manager {
         void save_zoos_file();
 
         // Store module
+        Store store;
         bool menu_store_print();
+        bool menu_products_print();
+        bool menu_sales_print();
+
+        void load_store_file();
+        void save_store_file();
 };
 
 #endif // MANAGER_H_INCLUDED

@@ -5,10 +5,12 @@ using namespace std;
 
 void Manager::load_files() {
     load_zoos_file();
+    load_store_file();
 }
 
 void Manager::save_files() {
     save_zoos_file();
+    save_store_file();
 }
 
 bool Manager::menu_print() {
@@ -66,9 +68,5 @@ int Manager::menu_read(int min, int max) {
 }
 
 bool Manager::menu_cover_print() {
-    return false;
-}
-
-bool Manager::menu_store_print() {
     return false;
 }

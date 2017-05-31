@@ -126,9 +126,6 @@ bool zoos_add(vector<Zoo> &zoos) {
     long size;
     double yearly_budget;
 
-    string s;
-    getline(cin, s);
-
     cout << tab << "Nombre del zoologico: ";
     getline(cin, name);
     cout << tab << "Ciudad: ";
