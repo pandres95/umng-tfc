@@ -108,7 +108,7 @@ bool zoo_edit(Zoo& zoo) {
         zoo.city(city);
     }
 
-    cout << tab << "País [" << zoo.country() << "]: ";
+    cout << tab << "Pais [" << zoo.country() << "]: ";
     getline(cin, country);
     if(!country.empty()) {
         zoo.country(country);
@@ -127,10 +127,10 @@ bool zoo_edit(Zoo& zoo) {
                 not_read = false;
             } catch(const std::invalid_argument& ia) {
                 cerr << tab << "Error: El valor ingresado [" << s_size
-                    << "] es inválido. Por favor ingréselo de nuevo." << endl;
+                    << "] es invalido. Por favor ingreselo de nuevo." << endl;
             }  catch(const std::out_of_range& ia) {
                 cerr << tab << "Error: El valor ingresado [" << s_size
-                    << "] está fuera de rango. Por favor ingréselo de nuevo."
+                    << "] esta fuera de rango. Por favor ingreselo de nuevo."
                     << endl;
             }
         } else {
@@ -150,7 +150,7 @@ bool zoo_edit(Zoo& zoo) {
                 not_read = false;
             } catch(int e) {
                 cout << tab << "Error: El valor ingresado [" << s_yearly_budget
-                    << "] es inválido. Por favor ingréselo de nuevo." << endl;
+                    << "] es invalido. Por favor ingreselo de nuevo." << endl;
             }
         } else {
             not_read = false;
@@ -173,7 +173,7 @@ long zoo_animal_pick(Zoo& zoo, const char* extra_message) {
     int i;
 
     do {
-        cout << tab << "Ingrese el número del animal a " << extra_message
+        cout << tab << "Ingrese el numero del animal a " << extra_message
             << "(1 - " << zoo.animals().size() << "/C para cancelar): ";
 
         try {
@@ -186,10 +186,10 @@ long zoo_animal_pick(Zoo& zoo, const char* extra_message) {
                 throw std::out_of_range("");
             }
         } catch(const std::invalid_argument& ia) {
-            cout << tab << "Opción incorrecta." << endl;
+            cout << tab << "Opcion incorrecta." << endl;
             i = 0;
         }  catch(const std::out_of_range& ia) {
-            cout << tab << "Opción incorrecta." << endl;
+            cout << tab << "Opcion incorrecta." << endl;
             i = 0;
         }
 
@@ -201,7 +201,7 @@ long zoo_animal_pick(Zoo& zoo, const char* extra_message) {
 }
 
 bool zoo_animal_list(Zoo& zoo) {
-    cout << tab << "Número de animales: " << zoo.animals().size()
+    cout << tab << "Numero de animales: " << zoo.animals().size()
         << endl << endl;
 
     for(auto &animal : zoo.animals()) {

@@ -51,10 +51,10 @@ bool Species::in_extinction_danger() {
 
 void Species::print(ostream& cout) {
     cout
-        << tab << "  " << "Nombre común: " << _common_name << endl
+        << tab << "  " << "Nombre comun: " << _common_name << endl
         << tab << "  " << "Nombre cientifico: " << _scientific_name << endl
         << tab << "  " << "Familia: " << _family << endl
-        << tab << "  " << "En riesgo de extinción: " << (
+        << tab << "  " << "En riesgo de extincion: " << (
             _in_extinction_danger ? "Si" : "No"
         ) << endl;
 }

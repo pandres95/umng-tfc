@@ -73,7 +73,7 @@ void Animal::print(ostream& cout) {
         << tab << "Id: " << _id << endl
         << tab << "Sexo: " << _sex << endl
         << tab << "Fecha de nacimiento: " << _date_of_birth << endl
-        << tab << "País de origen: " << _origin_country << " ("
+        << tab << "Pais de origen: " << _origin_country << " ("
             << _continent
         << ")" << endl
         << tab << " === Datos de Especie === " << endl;

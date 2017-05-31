@@ -85,7 +85,7 @@ long zoo_pick(vector<Zoo> &zoos, const char* extra_message) {
     int i;
 
     do {
-        cout << tab << "Ingrese el número del zoologico a " << extra_message
+        cout << tab << "Ingrese el numero del zoologico a " << extra_message
             << "(1 - " << zoos.size() << "): ";
 
         try {
@@ -95,10 +95,10 @@ long zoo_pick(vector<Zoo> &zoos, const char* extra_message) {
                 throw std::out_of_range("");
             }
         } catch(const std::invalid_argument& ia) {
-            cout << tab << "Opción incorrecta." << endl;
+            cout << tab << "Opcion incorrecta." << endl;
             i = 0;
         }  catch(const std::out_of_range& ia) {
-            cout << tab << "Opción incorrecta." << endl;
+            cout << tab << "Opcion incorrecta." << endl;
             i = 0;
         }
     } while(i < 1 || i > zoos.size());
@@ -133,7 +133,7 @@ bool zoos_add(vector<Zoo> &zoos) {
     getline(cin, name);
     cout << tab << "Ciudad: ";
     getline(cin, city);
-    cout << tab << "País: ";
+    cout << tab << "Pais: ";
     getline(cin, country);
     cout << tab << "Tamaño (m2): ";
     cin >> size;
