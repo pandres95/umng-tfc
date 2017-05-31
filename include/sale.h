@@ -1,6 +1,7 @@
 #ifndef SALE_H_INCLUDED
 #define SALE_H_INCLUDED
 
+#include <iostream>
 #include <ctime>
 
 class Sale {
